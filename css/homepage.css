@@ -1,0 +1,21 @@
+/* Ajustes para o carrossel: limitar largura e altura e manter proporção das imagens */
+/* Limita a largura máxima do carrossel e centraliza */
+.carousel {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Define altura máxima e mantem o corte central (object-fit) para imagens grandes */
+.carousel-item img {
+	width: 100%;
+	max-height: 60vh; /* ocupa no máximo 60% da altura da viewport */
+	object-fit: cover;
+	display: block;
+}
+
+/* Pequena margem para separar do topo */
+main.container {
+	padding-top: 0.5rem;
+}
+
