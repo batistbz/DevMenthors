@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="css/servicos.css">
 </head>
 <body>
-    
+    <!-- ===== NAVBAR ===== -->
+<div class="navbar">
+    <div class="logo">
+          <img src="images/simbolo.png">
+    </div>
+
+    <div class="menu">
+        <a href="#">Sobre nós</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="#">Curiosidades</a>
+        <a href="contato.html">Contato</a>
+    </div>
+</div>
+
 </body>
 </html>
+
+<script>
+    (function(){
+        // clique do mouse
+        document.addEventListener('click', function(e){
+            var el = e.target.closest('.clickable-text');
+            if(!el) return;
+            el.classList.toggle('clicked');
+        });
+
+        // teclado: Enter ou Space quando o elemento tem foco
+        document.addEventListener('keydown', function(e){
+            if(e.key !== 'Enter' && e.key !== ' ') return;
+            var el = document.activeElement;
+            if(el && el.classList && el.classList.contains('clickable-text')){
+                e.preventDefault();
+                el.classList.toggle('clicked');
+            }
+        });
+    })();
+</script>

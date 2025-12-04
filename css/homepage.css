@@ -1,21 +1,102 @@
-/* Ajustes para o carrossel: limitar largura e altura e manter proporção das imagens */
-/* Limita a largura máxima do carrossel e centraliza */
-.carousel {
-	max-width: 1100px;
-	margin-left: auto;
-	margin-right: auto;
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Define altura máxima e mantem o corte central (object-fit) para imagens grandes */
-.carousel-item img {
-	width: 100%;
-	max-height: 60vh; /* ocupa no máximo 60% da altura da viewport */
-	object-fit: cover;
-	display: block;
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
 }
 
-/* Pequena margem para separar do topo */
-main.container {
-	padding-top: 0.5rem;
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #c1fba4;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
+.logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu a {
+    color: #3a5a40;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    color: #2b8a3e; /* cor ao passar o mouse - altere para a sua preferência */
+    font-weight: 700; /* deixa em negrito no hover */
+    text-decoration: none;
+}
+
+/* ===== CARROSSEL ===== */
+.carrossel {
+    width: 600px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.imagens {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease;
+}
+
+.imagens img {
+    width: 600px;
+    height: 300px;
+}
+
+/* ===== CONTROLE DOS SLIDES ===== */
+input {
+    display: none;
+}
+
+#slide1:checked ~ .imagens {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .imagens {
+    transform: translateX(-600px);
+}
+
+#slide3:checked ~ .imagens {
+    transform: translateX(-1200px);
+}
+
+/* ===== BOTÕES ===== */
+.botoes {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.botoes label {
+    width: 12px;
+    height: 12px;
+    background: #555;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
