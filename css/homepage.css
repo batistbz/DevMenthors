@@ -1,4 +1,3 @@
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -49,54 +48,3 @@ body {
     text-decoration: none;
 }
 
-/* ===== CARROSSEL ===== */
-.carrossel {
-    width: 600px;
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.imagens {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease;
-}
-
-.imagens img {
-    width: 600px;
-    height: 300px;
-}
-
-/* ===== CONTROLE DOS SLIDES ===== */
-input {
-    display: none;
-}
-
-#slide1:checked ~ .imagens {
-    transform: translateX(0);
-}
-
-#slide2:checked ~ .imagens {
-    transform: translateX(-600px);
-}
-
-#slide3:checked ~ .imagens {
-    transform: translateX(-1200px);
-}
-
-/* ===== BOTÕES ===== */
-.botoes {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.botoes label {
-    width: 12px;
-    height: 12px;
-    background: #555;
-    display: inline-block;
-    border-radius: 50%;
-    margin: 5px;
-    cursor: pointer;
-}
